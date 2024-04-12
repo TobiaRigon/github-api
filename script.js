@@ -6,20 +6,8 @@
 // - Array
 // - Axios
 
-//======== AUTSEARCH ===========================
 
-// Imposta una variabile per tenere traccia dell'ID del timeout
-let timeoutId;
-// Alla modifica dell'input, reimposta il timeout
-document.getElementById('searchInput').addEventListener('input', function(){
-    // Cancella il timeout esistente, se presente
-    clearTimeout(timeoutId);
-    // Imposta un nuovo timeout dopo 700 millisecondi
-    timeoutId = setTimeout(function() {
-        // Esegui funzione di ricerca
-        searchRepositories();
-    }, 700); // Timeout impostato a 700 millisecondi
-});
+
 
 //======== SEARCH ==========================
 
@@ -99,6 +87,21 @@ function searchRepositories() {
     }
 }
 
+//======== AUTSEARCH ===========================
+
+// Imposta una variabile per tenere traccia dell'ID del timeout
+let timeoutId;
+// Alla modifica dell'input, reimposta il timeout
+document.getElementById('searchInput').addEventListener('input', function(){
+    // Cancella il timeout esistente, se presente
+    clearTimeout(timeoutId);
+    // Imposta un nuovo timeout dopo 700 millisecondi
+    timeoutId = setTimeout(function() {
+        // Esegui funzione di ricerca
+        searchRepositories();
+    }, 700); // Timeout impostato a 700 millisecondi
+});
+
 
 
 //======== DISPLAY ==========================
@@ -130,7 +133,7 @@ function displayRepositories(repositories) {
         const repoName = repo.full_name;
 
          // Estrai la descrizione dell'oggetto 'repo'
-         const repoDescription = repo.description;
+         const repoDescription = truncateString(repo.description, 100)
 
            // Estrai il numero di stars dell'oggetto 'repo'
            const repoStars = repo.stargazers_count;
@@ -220,3 +223,14 @@ function displayUsers(users) {
     });
 };
 }
+
+
+// Funzione per abbreviare stringhe
+
+function truncateString(str, num) {
+    if (str.length > num) {
+      return str.slice(0, num) + "...";
+    } else {
+      return str;
+    }
+  }
