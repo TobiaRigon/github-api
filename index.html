@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github-api</title>
+
+    <!-- import CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Form -->
+        <div >
+            <label for="searchInput">Cerca Repository:</label>
+            <input type="text" id="searchInput">
+
+            <!-- selettore ricerca -->
+            <select name="search_type" id="search_type" form="search_type_form">
+                <option value="user">User</option>
+                <option value="repo">Repo</option>
+              </select>
+            <button id="searchButton">Cerca</button>
+        </div>
+        <!-- Risultati -->
+        <div id="results"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

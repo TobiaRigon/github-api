@@ -1,0 +1,50 @@
+.element_card img{
+max-width: 60px;
+}
+.user_card img{
+    max-width: 60px;
+    }
+.container{
+    margin: 0 auto;
+    width: 90%;
+}
+
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.element_card{
+    width: 25vw;
+    margin:10px;
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.user_card{
+    width: 25vw;
+    margin:10px;
+    padding: 10px;
+    border-radius:10px;
+    text-align: center;
+    background-color: rgb(230, 173, 224);
+}
+
+.loader {
+    
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
